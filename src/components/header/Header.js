@@ -5,7 +5,8 @@ import axios from 'axios'
 class Header extends React.Component{
 
     state = {
-        categories: []
+        categories: [],
+        user      : undefined
     }
 
     componentDidMount = () => {
@@ -30,7 +31,7 @@ class Header extends React.Component{
 
     render(){
 
-        let { categories } = this.state
+        let { categories, user } = this.state
 
         return(
             <header>
@@ -122,7 +123,8 @@ class Header extends React.Component{
                                     <ul className="dropdown__catalog">
                                         <li><Link to="/auth/profile">Profile</Link></li>
                                         <li><Link to="/admin">DashDoard</Link></li>
-                                        <li><Link to="/auth/signup">Signup</Link></li>
+                                        {user && <li><Link to="/auth/logout">Logout</Link></li> }
+                                        {!user && <li><Link to="/auth/login">Login</Link></li>}
                                     </ul>
                                 </div>
                             </nav>

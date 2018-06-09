@@ -2,6 +2,10 @@ import React from 'react'
 
 class Signup extends React.Component{
 
+    handleChange = (e) => this.setState({[e.target.id]: e.target.value})
+
+    
+
     render(){
 
         return(
