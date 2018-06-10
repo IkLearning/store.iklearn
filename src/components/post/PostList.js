@@ -30,7 +30,6 @@ class PostList extends React.Component{
                         items: res.data.items,
                         isLoaded: true
                     })
-                console.log(res.data.items)
             })
             .catch(err => this.setState({isLoaded: false}))
     }
@@ -42,7 +41,6 @@ class PostList extends React.Component{
 
 
     render(){
-
         let { isLoaded, items } = {...this.state}
 
         return(

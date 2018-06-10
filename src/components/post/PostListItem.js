@@ -6,7 +6,6 @@ import NumericLabel from 'react-pretty-numbers'
 class PostListItem extends React.Component{
 
     render(){
-        
         return(
             <div className="posts__body">
                 <div className="posts__item">

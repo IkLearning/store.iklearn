@@ -8,7 +8,6 @@ import { Switch, Route} from 'react-router-dom'
 class PostContainer extends React.Component{
 
     render(){
-
         return ( 
             <Switch>
                 <Route exact path='/' component={PostList} />
