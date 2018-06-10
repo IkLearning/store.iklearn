@@ -4,6 +4,11 @@ import Main from './components/Main'
 import Footer from './components/footer/Footer'
 
 class App extends Component {
+
+  addToCart = () => {
+    alert('ahihi đồ khó hiểu')
+  }
+
   render() {
     return (
       <div className="App">

@@ -2,20 +2,15 @@ import decode from 'jwt-decode'
 
 export default class AuthService {
 
-    constructor(domain) {
-        this.domain = domain || 'http://localhost:3001/api/v1' // API server domain
-    }
-
     login = (username, password) => {
-        // Get a token from api server using the fetch api
-        return this.fetch(`${this.domain}/login`, {
+        return this.fetch(`${process.env.REACT_APP_DOMAIN_NAME}/login`, {
             method: 'POST',
             body: JSON.stringify({
                 username,
                 password
             })
         }).then(res => {
-            this.setToken(res.token) // Setting the token in localStorage
+            this.setToken(res.token) 
             return Promise.resolve(res)
         })
     }
@@ -49,14 +44,10 @@ export default class AuthService {
 
 
     fetch(url, options) {
-        // performs api calls sending the required authentication headers
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-
-        // Setting Authorization header
-        // Authorization: Bearer xxxxxxx.xxxxxxxx.xxxxxx
         if (this.loggedIn()) {
             headers['Authorization'] = 'Bearer ' + this.getToken()
         }

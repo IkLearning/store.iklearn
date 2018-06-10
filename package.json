@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
     "history": "^4.7.2",
     "jwt-decode": "^2.2.0",
     "moment-timezone": "^0.5.16",
@@ -12,8 +13,10 @@
     "react-moment": "^0.7.0",
     "react-placeholder": "^3.0.1",
     "react-pretty-numbers": "^3.0.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

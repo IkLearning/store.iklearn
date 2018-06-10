@@ -11,7 +11,7 @@ class PostList extends React.Component{
     }
 
     componentDidMount = ()=>{
-        axios.get('http://localhost:3001/api/v1/products')
+        axios.get(`${process.env.REACT_APP_DOMAIN_NAME}/products`)
             .then(res =>{
                 if(res.status === 200 || res.statusText === 'OK')
                     this.setState({
@@ -23,7 +23,7 @@ class PostList extends React.Component{
     }
 
     getByCat = (id) => {
-        axios.get(`http://localhost:3001/api/v1/products/category/5b0351cb2b8ccf1d04dd82c6`)
+        axios.get(`${process.env.REACT_APP_DOMAIN_NAME}/products/category/5b0351cb2b8ccf1d04dd82c6`)
             .then(res =>{
                 if(res.status === 200 || res.statusText === 'OK')
                     this.setState({
@@ -62,7 +62,7 @@ class PostList extends React.Component{
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
                 {!isLoaded && <PostListPlaceHolder style={{paddinngTop: 10}} /> }
                 {isLoaded &&
-                    items.map((item, i) =>this.renderItem(i))
+                    items.map((item, i) => this.renderItem(i))
                 }
             </div>
         )
