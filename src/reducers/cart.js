@@ -31,7 +31,7 @@ const quantity = (state = initialState.quantity, action) => {
       }
 }
 
-const quantity = (state = initialState.price, action) => {
+const price = (state = initialState.price, action) => {
     switch (action.type) {
         case ADD_TO_CART:
             let product = action.product
