@@ -4,13 +4,13 @@ import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import history from './components/history/History'
 import { Provider } from 'react-redux'
-import store from './store/index'
+// import store from './store/index'
 import registerServiceWorker from './registerServiceWorker'
 require('dotenv').config()
 
 
 ReactDOM.render((
-    <Provider store={store}>
+    <Provider>
         <BrowserRouter history={history}>
             <App />
         </BrowserRouter>

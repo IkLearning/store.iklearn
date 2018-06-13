@@ -1,10 +1,9 @@
 import React from 'react'
-import Login from './Login'
-import Signup from './Signup'
+import Login from '../components/auth/Login'
+import Signup from '../components/auth/Signup'
 import { Switch, Route } from 'react-router-dom'
 
 class AuthContainer extends React.Component{
-
 
     render(){
 

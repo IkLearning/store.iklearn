@@ -1,6 +1,6 @@
 import React from 'react'
-import PostContainer from './post/PostContainer'
-import AuthContainer from './auth/AuthContainer'
+import PostContainer from './PostContainer'
+import AuthContainer from './AuthContainer'
 import { Switch, Route } from 'react-router-dom'
 
 class Main extends React.Component{

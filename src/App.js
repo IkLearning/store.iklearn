@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import Header from './components/header/Header'
-import Main from './components/Main'
+import Main from './containers/Main'
 import Footer from './components/footer/Footer'
+import ProductActions from './actions/product'
 
 class App extends Component {
-
-  addToCart = () => {
-    alert('ahihi đồ khó hiểu')
-  }
 
   render() {
     return (
@@ -19,5 +16,7 @@ class App extends Component {
     )
   }
 }
+
+ProductActions.fetchProducts()
 
 export default App
