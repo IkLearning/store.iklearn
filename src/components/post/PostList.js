@@ -1,48 +1,21 @@
 import React from 'react'
 import PostListPlaceHolder from './PostListPlaceHolder'
 import PostListItem from './PostListItem'
-import axios from 'axios'
 
 class PostList extends React.Component{
 
-    state = {
-        items: [],
-        isLoaded: false
-    }
+    componentDidMount = () => this.props.fetchProducts()
 
-    componentDidMount = ()=>{
-        axios.get(`${process.env.REACT_APP_DOMAIN_NAME}/products`)
-            .then(res =>{
-                if(res.status === 200 || res.statusText === 'OK')
-                    this.setState({
-                        items: res.data.items,
-                        isLoaded: true
-                    })
-            })
-            .catch(err => this.setState({isLoaded: false}))
-    }
-
-    getByCat = (id) => {
-        axios.get(`${process.env.REACT_APP_DOMAIN_NAME}/products/category/5b0351cb2b8ccf1d04dd82c6`)
-            .then(res =>{
-                if(res.status === 200 || res.statusText === 'OK')
-                    this.setState({
-                        items: res.data.items,
-                        isLoaded: true
-                    })
-            })
-            .catch(err => this.setState({isLoaded: false}))
-    }
+    getByCat = (id) => () => this.props.fetchProductsByCategory(id)
 
     renderItem = (i) => {
-        let items = [...this.state.items]
+        let items = [...this.props.products]
         return <PostListItem key={items[i]._id} value={items[i]} getByCat={this.getByCat}/>
     }
 
 
     render(){
         let { isLoaded, items } = {...this.state}
-
         return(
             <div className="posts">
                 <div className="posts__head">

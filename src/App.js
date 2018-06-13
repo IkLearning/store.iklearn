@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/header/Header'
 import Main from './containers/Main'
 import Footer from './components/footer/Footer'
-import ProductActions from './actions/product'
+import { fetchProducts } from './actions/product'
 
 class App extends Component {
 
@@ -17,6 +17,6 @@ class App extends Component {
   }
 }
 
-ProductActions.fetchProducts()
+console.log(fetchProducts())
 
 export default App
